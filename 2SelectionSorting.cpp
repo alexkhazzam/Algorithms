@@ -6,17 +6,18 @@ std::vector<double> sort(std::vector<double> v)
     for (size_t i{0}; i < v.size(); ++i)
     {
         double _min_el{v[i]}, _min_idx{static_cast<double>(i)};
+        std::cout << _min_idx << std::endl;
         for (size_t k{static_cast<size_t>(v.size() - 1)}; k > i; --k)
         {
-            if (v[k] < _min_idx)
+            if (v[k] < _min_el)
             {
-                _min_el = k;
-                _min_idx = v[k];
+                _min_idx = k;
+                _min_el = v[k];
             }
         }
         double _curr_el{v[i]};
-        v[i] = _min_idx;
-        v[_min_el] = _curr_el;
+        v[i] = _min_el;
+        v[_min_idx] = _curr_el;
     }
     return v;
 }
