@@ -4,13 +4,14 @@
 std::vector<double> sort(std::vector<double> numbers)
 {
     for (size_t i{0}; i < numbers.size(); ++i)
-        for (size_t k{numbers.size() - 1}; k > i; --k)
-            if (numbers[i] > numbers[k])
-            {
-                double cur_pos{numbers[k]};
-                numbers[k] = numbers[i];
-                numbers[i] = cur_pos;
-            }
+        if (i != 1)
+            for (size_t k{numbers.size() - 1}; k > i; --k)
+                if (numbers[i] > numbers[k])
+                {
+                    double cur_pos{numbers[k]};
+                    numbers[k] = numbers[i];
+                    numbers[i] = cur_pos;
+                }
     return numbers;
 }
 
