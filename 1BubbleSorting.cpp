@@ -1,18 +1,17 @@
 #include <iostream>
 #include <vector>
 
-std::vector<double> sort(std::vector<double> numbers)
+std::vector<double> sort(std::vector<double> v)
 {
-    for (size_t i{0}; i < numbers.size(); ++i)
-        if (i != 1)
-            for (size_t k{numbers.size() - 1}; k > i; --k)
-                if (numbers[i] > numbers[k])
-                {
-                    double cur_pos{numbers[k]};
-                    numbers[k] = numbers[i];
-                    numbers[i] = cur_pos;
-                }
-    return numbers;
+    for (size_t i{0}; i < v.size(); ++i)
+        for (size_t k{v.size() - 1}; k > i; --k)
+            if (v[i] > v[k])
+            {
+                double _cur_el{v[k]};
+                v[k] = v[i];
+                v[i] = _cur_el;
+            }
+    return v;
 }
 
 int main()
