@@ -5,8 +5,7 @@ std::vector<double> sort(std::vector<double> v)
 {
     for (size_t i{0}; i < v.size(); ++i)
         for (size_t k{v.size() - 1}; k > i; --k)
-            if (v[i] > v[k])
-            {
+            if (v[i] > v[k]) {
                 double _cur_el{v[k]};
                 v[k] = v[i];
                 v[i] = _cur_el;
