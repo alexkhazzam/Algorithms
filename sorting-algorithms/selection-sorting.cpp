@@ -15,6 +15,7 @@ std::vector<double> sort(std::vector<double> v)
                 _min_el = v[k];
             }
         }
+        
         double _curr_el{v[i]};
         v[i] = _min_el;
         v[_min_idx] = _curr_el;
