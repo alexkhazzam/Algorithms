@@ -38,7 +38,7 @@ const init = (): void => {
     a1[i] = Math.floor(Math.random() * 10);
   }
 
-  console.log(mergeSort(a1));
+  mergeSort(a1);
 };
 
 init();
